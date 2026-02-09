@@ -29,12 +29,8 @@ function initTheme(): void {
   document.documentElement.classList.toggle("dark", isDark);
 }
 
-let initialized = false;
 if (typeof window !== "undefined") {
-  if (!initialized) {
-    initialized = true;
-    initTheme();
-  }
+  initTheme();
 }
 
 export default function DarkModeToggle() {

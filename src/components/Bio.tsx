@@ -1,3 +1,15 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPython, faJs, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
+
+const ICON_MAP: Record<string, any> = {
+  React: faReact,
+  JavaScript: faJs,
+  TypeScript: faCode,
+  Python: faPython,
+  'C#': faCode,
+};
+
 export default function Bio() {
   return (
     <section
@@ -37,20 +49,17 @@ export default function Bio() {
         <div className="md:col-span-2">
           {/* TODO: Add your name */}
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Your Name
+            Ben Hockley
           </h3>
 
           {/* TODO: Add your job title or tagline */}
           <p className="mt-1 text-gray-500 dark:text-gray-400">
-            Your Job Title / Tagline
+            Software Engineer
           </p>
 
           {/* TODO: Write a short bio about yourself */}
           <p className="mt-4 leading-relaxed text-gray-600 dark:text-gray-300">
-            Welcome to my portfolio! This is where you can share a brief
-            introduction about yourself, your background, skills, and what
-            you&apos;re passionate about. Replace this placeholder text with
-            your own story.
+            My name is Ben Hockley, I am a software engineer studying Applied Software Engineering at Cardiff University.
           </p>
 
           {/* TODO: Add your skills or technologies */}
@@ -59,13 +68,18 @@ export default function Bio() {
               Skills &amp; Technologies
             </h4>
             <div className="mt-3 flex flex-wrap gap-2">
-              {["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5"].map(
+              {["React", "JavaScript", "TypeScript", "Python", "C#"].map(
                 (skill) => (
                   <span
                     key={skill}
-                    className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+                    className="flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300"
                   >
-                    {skill}
+                    <FontAwesomeIcon
+                      icon={ICON_MAP[skill] || faCode}
+                      className="inline-block text-current"
+                      style={{ width: '0.9em' }}
+                    />
+                    <span>{skill}</span>
                   </span>
                 )
               )}

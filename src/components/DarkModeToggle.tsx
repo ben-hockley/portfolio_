@@ -46,7 +46,7 @@ export default function DarkModeToggle() {
     <button
       onClick={toggle}
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-      className="rounded-full p-2 text-gray-600 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700"
+      className="rounded-full p-2 text-[var(--text-muted)] transition-all hover:text-accent hover:bg-accent/10 border border-transparent hover:border-accent/25"
     >
       {dark ? (
         /* Sun icon */

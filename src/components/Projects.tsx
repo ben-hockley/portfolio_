@@ -1,24 +1,33 @@
 "use client";
 
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 import {
   projects,
   CATEGORY_LABELS,
   CATEGORY_ORDER,
-  accentColor,
 } from "@/data/projects";
 import type { Project, ProjectCategory } from "@/data/projects";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+};
+
+const staggerContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <a
+    <motion.a
+      variants={fadeUp}
       href={project.link}
-      className={`group flex-shrink-0 snap-start rounded-2xl border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/60 backdrop-blur-sm shadow-xl p-6 transition-transform duration-200 hover:-translate-y-1 border-t-4 ${accentColor(
-        project.category
-      )} w-[85vw] sm:w-auto`}
+      className="group flex-shrink-0 snap-start rounded-xl border border-accent/15 bg-white dark:bg-dark-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(0,212,200,0.1)] w-[85vw] sm:w-auto"
     >
-      <div className="mb-4 flex h-40 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-700/40">
+      <div className="mb-4 flex h-40 items-center justify-center overflow-hidden rounded-lg bg-[#f0f5f7] dark:bg-dark-surface">
         <img
           src={project.image}
           alt={`Screenshot of ${project.title}`}
@@ -26,10 +35,10 @@ function ProjectCard({ project }: { project: Project }) {
         />
       </div>
 
-      <h4 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+      <h4 className="text-lg font-semibold text-[var(--text)] group-hover:text-accent transition-colors">
         {project.title}
       </h4>
-      <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-slate-400">
+      <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
         {project.description}
       </p>
 
@@ -37,13 +46,13 @@ function ProjectCard({ project }: { project: Project }) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-indigo-100 dark:bg-indigo-500/20 px-2 py-0.5 text-xs font-medium text-indigo-700 dark:text-indigo-300"
+            className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent border border-accent/25"
           >
             {tag}
           </span>
         ))}
       </div>
-    </a>
+    </motion.a>
   );
 }
 
@@ -68,14 +77,14 @@ function CarouselControls({
       <button
         onClick={() => scroll("left")}
         aria-label={`Scroll ${label} left`}
-        className="rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800/80 px-3 py-1.5 text-sm text-gray-700 dark:text-slate-300 transition-colors hover:bg-gray-100 dark:hover:bg-slate-700"
+        className="rounded-full border border-accent/25 bg-[var(--surface)] px-3 py-1.5 text-sm text-[var(--text-muted)] transition-colors hover:border-accent/50 hover:text-accent"
       >
         ←
       </button>
       <button
         onClick={() => scroll("right")}
         aria-label={`Scroll ${label} right`}
-        className="rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800/80 px-3 py-1.5 text-sm text-gray-700 dark:text-slate-300 transition-colors hover:bg-gray-100 dark:hover:bg-slate-700"
+        className="rounded-full border border-accent/25 bg-[var(--surface)] px-3 py-1.5 text-sm text-[var(--text-muted)] transition-colors hover:border-accent/50 hover:text-accent"
       >
         →
       </button>
@@ -90,13 +99,17 @@ function CategorySection({ category }: { category: ProjectCategory }) {
 
   return (
     <div className="mt-10">
-      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+      <h3 className="font-syne text-2xl font-bold text-[var(--text)]">
         {CATEGORY_LABELS[category]}
       </h3>
 
       {/* Mobile: horizontal carousel */}
-      <div
+      <motion.div
         ref={scrollRef}
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         className="mt-6 flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible"
         role="region"
         aria-label={`${CATEGORY_LABELS[category]} carousel`}
@@ -105,7 +118,7 @@ function CategorySection({ category }: { category: ProjectCategory }) {
         {items.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
-      </div>
+      </motion.div>
 
       <CarouselControls
         scrollRef={scrollRef}
@@ -122,7 +135,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="bg-gray-50 dark:bg-slate-900"
+      className="bg-[var(--bg)]"
       aria-labelledby="projects-heading"
     >
       <div
@@ -132,11 +145,12 @@ export default function Projects() {
       >
         <h2
           id="projects-heading"
-          className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+          className="font-syne text-3xl font-bold tracking-tight text-[var(--text)] sm:text-4xl"
         >
           Projects
         </h2>
-        <p className="mt-4 text-gray-600 dark:text-slate-400">
+        <div className="mt-3 mb-8 h-1 w-12 rounded-full bg-accent" />
+        <p className="text-[var(--text-muted)]">
           A selection of projects I&apos;ve worked on. Replace these
           placeholders with your own work.
         </p>

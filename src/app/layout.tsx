@@ -22,6 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+          rel="stylesheet"
+        />
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             var saved = localStorage.getItem('theme');
@@ -33,7 +37,7 @@ export default function RootLayout({
         `}} />
       </head>
       <body
-        className="antialiased bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-100"
+        className="antialiased font-dm bg-[var(--bg)] text-[var(--text)]"
       >
         {children}
       </body>

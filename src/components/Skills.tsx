@@ -2,8 +2,7 @@
 
 import { useInView } from "@/hooks/useInView";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPython, faJs, faReact } from "@fortawesome/free-brands-svg-icons";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faPython, faJs, faReact, faBootstrap, faAndroid, faDocker, faGit, faJava, faLinux, faMicrosoft, faNodeJs} from "@fortawesome/free-brands-svg-icons";
 import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 interface Skill {
@@ -14,9 +13,15 @@ interface Skill {
 const skills: Skill[] = [
   { name: "React", icon: faReact },
   { name: "JavaScript", icon: faJs },
-  { name: "TypeScript", icon: faCode },
   { name: "Python", icon: faPython },
-  { name: "C#", icon: faCode },
+  { name: "Bootstrap", icon: faBootstrap },
+  { name: "Android", icon: faAndroid },
+  { name: "Docker", icon: faDocker },
+  { name: "Git", icon: faGit },
+  { name: "Java", icon: faJava },
+  { name: "C#", icon: faMicrosoft },
+  { name: "Linux", icon: faLinux },
+  { name: "Node.js", icon: faNodeJs },
 ];
 
 function SkillCard({ skill }: { skill: Skill }) {

@@ -25,35 +25,6 @@ const skills: Skill[] = [
   { name: "Node.js", icon: faNodeJs },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
-};
-
-const staggerContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
-};
-
-function SkillBadge({ skill }: { skill: Skill }) {
-  return (
-    <motion.div
-      variants={fadeUp}
-      className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent border border-accent/25 hover:bg-accent/20 transition-colors"
-    >
-      <FontAwesomeIcon
-        icon={skill.icon}
-        className="text-accent"
-        style={{ width: "1.25rem", height: "1.25rem" }}
-        aria-hidden="true"
-      />
-      <span className="whitespace-nowrap text-sm font-medium tracking-wide">
-        {skill.name}
-      </span>
-    </motion.div>
-  );
-}
-
 function SkillCard({ skill }: { skill: Skill }) {
   return (
     <div className="flex flex-col items-center gap-2 px-8">
@@ -92,19 +63,6 @@ export default function Skills() {
           Skills &amp; Technologies
         </h2>
         <div className="mt-3 mb-8 h-1 w-12 rounded-full bg-accent" />
-
-        {/* Skill badges grid */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex flex-wrap gap-3 mb-12"
-        >
-          {skills.map((skill) => (
-            <SkillBadge key={skill.name} skill={skill} />
-          ))}
-        </motion.div>
 
         {/* Infinite marquee */}
         <div

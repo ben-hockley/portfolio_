@@ -49,21 +49,24 @@ export default function DarkModeToggle() {
       className="rounded-full p-2 text-[var(--text-muted)] transition-all hover:text-accent hover:bg-accent/10 border border-transparent hover:border-accent/25"
     >
       {dark ? (
-        /* Sun icon */
+        /* Sun icon: circle with 8 equal rays */
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
-          fill="none"
           viewBox="0 0 24 24"
+          fill="none"
           stroke="currentColor"
           aria-hidden="true"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 7.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-          />
+          <circle cx="12" cy="12" r="4" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+          <line x1="16" y1="12" x2="20" y2="12" strokeWidth={2} strokeLinecap="round" />
+          <line x1="14.828" y1="14.828" x2="17.657" y2="17.657" strokeWidth={2} strokeLinecap="round" />
+          <line x1="12" y1="16" x2="12" y2="20" strokeWidth={2} strokeLinecap="round" />
+          <line x1="9.172" y1="14.828" x2="6.343" y2="17.657" strokeWidth={2} strokeLinecap="round" />
+          <line x1="8" y1="12" x2="4" y2="12" strokeWidth={2} strokeLinecap="round" />
+          <line x1="9.172" y1="9.172" x2="6.343" y2="6.343" strokeWidth={2} strokeLinecap="round" />
+          <line x1="12" y1="8" x2="12" y2="4" strokeWidth={2} strokeLinecap="round" />
+          <line x1="14.828" y1="9.172" x2="17.657" y2="6.343" strokeWidth={2} strokeLinecap="round" />
         </svg>
       ) : (
         /* Moon icon */

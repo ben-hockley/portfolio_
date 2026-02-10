@@ -13,7 +13,6 @@ const staggerContainer = {
   show: { transition: { staggerChildren: 0.08 } },
 };
 
-/* TODO: Replace "#" with your actual profile URLs */
 const socials = [
   {
     name: "GitHub",
@@ -76,8 +75,7 @@ export default function SocialLinks() {
         </h2>
         <div className="mt-3 mb-8 h-1 w-12 rounded-full bg-accent" />
         <p className="text-[var(--text-muted)]">
-          Feel free to reach out through any of these platforms. Replace the
-          placeholder links with your actual profiles.
+          Feel free to reach out through any of these platforms.
         </p>
 
         <motion.div

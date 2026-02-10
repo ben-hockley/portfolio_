@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-/* TODO: Replace with your own personal details for SEO */
 export const metadata: Metadata = {
-  title: "Your Name — Portfolio",
+  title: "Ben Hockley - Personal Portfolio",
   description:
-    "Personal portfolio showcasing projects and skills. Replace this with your own description.",
+    "Ben Hockley is a software engineer with a passion for building high-quality usable web applications that solve real-world problems.",
   openGraph: {
-    title: "Your Name — Portfolio",
+    title: "Ben Hockley - Personal Portfolio",
     description:
-      "Personal portfolio showcasing projects and skills.",
+      "Ben Hockley is a software engineer with a passion for building high-quality usable web applications that solve real-world problems.",
     type: "website",
   },
 };

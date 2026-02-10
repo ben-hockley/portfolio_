@@ -50,12 +50,6 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <a
-            href="#projects"
-            className="hidden sm:inline-flex rounded-full bg-gradient-to-r from-[#00c8b8] to-[#0095e8] px-5 py-2 text-sm font-semibold text-white transition-shadow hover:shadow-[0_0_20px_rgba(0,212,200,0.3)]"
-          >
-            My Work
-          </a>
           <DarkModeToggle />
         </div>
       </nav>

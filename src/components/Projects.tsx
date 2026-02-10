@@ -151,8 +151,7 @@ export default function Projects() {
         </h2>
         <div className="mt-3 mb-8 h-1 w-12 rounded-full bg-accent" />
         <p className="text-[var(--text-muted)]">
-          A selection of projects I&apos;ve worked on. Replace these
-          placeholders with your own work.
+          A selection of projects I&apos;ve worked on.
         </p>
 
         {CATEGORY_ORDER.map((cat) => (

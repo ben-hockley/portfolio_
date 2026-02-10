@@ -11,13 +11,13 @@ const navLinks = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-700/50 bg-slate-900/70 backdrop-blur-md dark:bg-slate-900/70">
+    <header className="sticky top-0 z-50 border-b border-gray-200 dark:border-slate-700/50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md">
       <nav
         className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
         aria-label="Main navigation"
       >
         {/* TODO: Replace with your name or logo */}
-        <a href="#" className="text-lg font-bold tracking-tight text-white">
+        <a href="#" className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
           Portfolio
         </a>
 
@@ -27,7 +27,7 @@ export default function Header() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+                  className="text-sm font-medium text-gray-600 dark:text-slate-300 transition-colors hover:text-gray-900 dark:hover:text-white"
                 >
                   {link.label}
                 </a>

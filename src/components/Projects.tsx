@@ -14,11 +14,11 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <a
       href={project.link}
-      className={`group flex-shrink-0 snap-start rounded-2xl border border-slate-700/50 bg-slate-800/60 backdrop-blur-sm shadow-xl p-6 transition-transform duration-200 hover:-translate-y-1 border-t-4 ${accentColor(
+      className={`group flex-shrink-0 snap-start rounded-2xl border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/60 backdrop-blur-sm shadow-xl p-6 transition-transform duration-200 hover:-translate-y-1 border-t-4 ${accentColor(
         project.category
       )} w-[85vw] sm:w-auto`}
     >
-      <div className="mb-4 flex h-40 items-center justify-center overflow-hidden rounded-lg bg-slate-700/40">
+      <div className="mb-4 flex h-40 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-700/40">
         <img
           src={project.image}
           alt={`Screenshot of ${project.title}`}
@@ -26,10 +26,10 @@ function ProjectCard({ project }: { project: Project }) {
         />
       </div>
 
-      <h4 className="text-lg font-semibold text-white group-hover:text-indigo-400 transition-colors">
+      <h4 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
         {project.title}
       </h4>
-      <p className="mt-2 text-sm leading-relaxed text-slate-400">
+      <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-slate-400">
         {project.description}
       </p>
 
@@ -37,7 +37,7 @@ function ProjectCard({ project }: { project: Project }) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-indigo-500/20 px-2 py-0.5 text-xs font-medium text-indigo-300"
+            className="rounded-full bg-indigo-100 dark:bg-indigo-500/20 px-2 py-0.5 text-xs font-medium text-indigo-700 dark:text-indigo-300"
           >
             {tag}
           </span>
@@ -68,14 +68,14 @@ function CarouselControls({
       <button
         onClick={() => scroll("left")}
         aria-label={`Scroll ${label} left`}
-        className="rounded-lg border border-slate-700 bg-slate-800/80 px-3 py-1.5 text-sm text-slate-300 transition-colors hover:bg-slate-700"
+        className="rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800/80 px-3 py-1.5 text-sm text-gray-700 dark:text-slate-300 transition-colors hover:bg-gray-100 dark:hover:bg-slate-700"
       >
         ←
       </button>
       <button
         onClick={() => scroll("right")}
         aria-label={`Scroll ${label} right`}
-        className="rounded-lg border border-slate-700 bg-slate-800/80 px-3 py-1.5 text-sm text-slate-300 transition-colors hover:bg-slate-700"
+        className="rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800/80 px-3 py-1.5 text-sm text-gray-700 dark:text-slate-300 transition-colors hover:bg-gray-100 dark:hover:bg-slate-700"
       >
         →
       </button>
@@ -90,7 +90,7 @@ function CategorySection({ category }: { category: ProjectCategory }) {
 
   return (
     <div className="mt-10">
-      <h3 className="text-2xl font-bold text-white">
+      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
         {CATEGORY_LABELS[category]}
       </h3>
 
@@ -122,7 +122,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="bg-slate-900"
+      className="bg-gray-50 dark:bg-slate-900"
       aria-labelledby="projects-heading"
     >
       <div
@@ -132,11 +132,11 @@ export default function Projects() {
       >
         <h2
           id="projects-heading"
-          className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
         >
           Projects
         </h2>
-        <p className="mt-4 text-slate-400">
+        <p className="mt-4 text-gray-600 dark:text-slate-400">
           A selection of projects I&apos;ve worked on. Replace these
           placeholders with your own work.
         </p>

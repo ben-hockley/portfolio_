@@ -49,7 +49,7 @@ export default function SocialLinks() {
     <section
       id="social"
       ref={ref}
-      className="bg-slate-800"
+      className="bg-white dark:bg-slate-800"
       aria-labelledby="social-heading"
     >
       <div
@@ -59,11 +59,11 @@ export default function SocialLinks() {
       >
         <h2
           id="social-heading"
-          className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
         >
           Get in Touch
         </h2>
-        <p className="mt-4 text-slate-400">
+        <p className="mt-4 text-gray-600 dark:text-slate-400">
           Feel free to reach out through any of these platforms. Replace the
           placeholder links with your actual profiles.
         </p>
@@ -76,7 +76,7 @@ export default function SocialLinks() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.name}
-              className="flex items-center gap-3 rounded-lg border border-slate-700/50 bg-slate-800/60 backdrop-blur-sm px-5 py-3 text-slate-400 transition-colors hover:border-slate-500 hover:text-white"
+              className="flex items-center gap-3 rounded-lg border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/60 backdrop-blur-sm px-5 py-3 text-gray-600 dark:text-slate-400 transition-colors hover:border-gray-400 dark:hover:border-slate-500 hover:text-gray-900 dark:hover:text-white"
             >
               {social.icon}
               <span className="text-sm font-medium">{social.name}</span>

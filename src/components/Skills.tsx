@@ -28,7 +28,7 @@ function SkillCard({ skill }: { skill: Skill }) {
         style={{ width: "3rem", height: "3rem" }}
         aria-hidden="true"
       />
-      <span className="whitespace-nowrap text-sm font-medium text-slate-300">
+      <span className="whitespace-nowrap text-sm font-medium text-gray-700 dark:text-slate-300">
         {skill.name}
       </span>
     </div>
@@ -42,7 +42,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="bg-slate-800"
+      className="bg-white dark:bg-slate-800"
       aria-labelledby="skills-heading"
     >
       <div
@@ -52,7 +52,7 @@ export default function Skills() {
       >
         <h2
           id="skills-heading"
-          className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
         >
           Skills &amp; Technologies
         </h2>
@@ -65,8 +65,8 @@ export default function Skills() {
           aria-live="off"
         >
           {/* Fade edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-slate-800 to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-slate-800 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white dark:from-slate-800 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white dark:from-slate-800 to-transparent" />
 
           <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
             {/* Duplicate list for seamless loop */}

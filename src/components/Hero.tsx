@@ -8,15 +8,15 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950"
+      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950"
     >
       {/* Animated gradient orb */}
       <div
-        className="pointer-events-none absolute right-[-10%] top-[10%] h-[500px] w-[500px] rounded-full bg-indigo-600/20 blur-3xl animate-float"
+        className="pointer-events-none absolute right-[-10%] top-[10%] h-[500px] w-[500px] rounded-full bg-indigo-600/10 dark:bg-indigo-600/20 blur-3xl animate-float"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute left-[10%] bottom-[5%] h-[300px] w-[300px] rounded-full bg-purple-600/15 blur-3xl animate-float"
+        className="pointer-events-none absolute left-[10%] bottom-[5%] h-[300px] w-[300px] rounded-full bg-purple-600/10 dark:bg-purple-600/15 blur-3xl animate-float"
         style={{ animationDelay: "4s" }}
         aria-hidden="true"
       />
@@ -32,11 +32,11 @@ export default function Hero() {
             Software Engineer
           </p>
           <h1 className="mt-4 text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-            <span className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
               Ben Hockley
             </span>
           </h1>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-slate-300">
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-gray-600 dark:text-slate-300">
             My name is Ben Hockley, I am a software engineer studying Applied
             Software Engineering at Cardiff University.
           </p>
@@ -49,7 +49,7 @@ export default function Hero() {
             </a>
             <a
               href="#social"
-              className="rounded-lg border border-slate-600 px-6 py-3 text-sm font-semibold text-slate-300 transition-colors hover:border-slate-400 hover:text-white"
+              className="rounded-lg border border-gray-300 dark:border-slate-600 px-6 py-3 text-sm font-semibold text-gray-700 dark:text-slate-300 transition-colors hover:border-gray-400 dark:hover:border-slate-400 hover:text-gray-900 dark:hover:text-white"
             >
               Get in Touch
             </a>
@@ -59,12 +59,12 @@ export default function Hero() {
         {/* Right — Visual element (geometric avatar placeholder) */}
         <div className="flex items-center justify-center">
           <div className="relative">
-            <div className="h-64 w-64 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 opacity-80 blur-sm sm:h-80 sm:w-80" />
+            <div className="h-64 w-64 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 opacity-60 dark:opacity-80 blur-sm sm:h-80 sm:w-80" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-56 w-56 items-center justify-center rounded-full bg-slate-800/80 backdrop-blur-sm sm:h-72 sm:w-72">
+              <div className="flex h-56 w-56 items-center justify-center rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm sm:h-72 sm:w-72">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-24 w-24 text-slate-400"
+                  className="h-24 w-24 text-gray-400 dark:text-slate-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

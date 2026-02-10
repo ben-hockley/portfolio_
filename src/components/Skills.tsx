@@ -61,7 +61,8 @@ export default function Skills() {
         <div
           className="relative mt-10 overflow-hidden"
           aria-label="Skills marquee"
-          role="marquee"
+          role="region"
+          aria-live="off"
         >
           {/* Fade edges */}
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-slate-800 to-transparent" />

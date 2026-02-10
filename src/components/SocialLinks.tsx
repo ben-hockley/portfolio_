@@ -1,6 +1,17 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+};
+
+const staggerContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
 
 /* TODO: Replace "#" with your actual profile URLs */
 const socials = [
@@ -49,7 +60,7 @@ export default function SocialLinks() {
     <section
       id="social"
       ref={ref}
-      className="bg-white dark:bg-slate-800"
+      className="bg-[var(--surface)] dark:bg-dark-surface"
       aria-labelledby="social-heading"
     >
       <div
@@ -59,30 +70,38 @@ export default function SocialLinks() {
       >
         <h2
           id="social-heading"
-          className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+          className="font-syne text-3xl font-bold tracking-tight text-[var(--text)] sm:text-4xl"
         >
           Get in Touch
         </h2>
-        <p className="mt-4 text-gray-600 dark:text-slate-400">
+        <div className="mt-3 mb-8 h-1 w-12 rounded-full bg-accent" />
+        <p className="text-[var(--text-muted)]">
           Feel free to reach out through any of these platforms. Replace the
           placeholder links with your actual profiles.
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-10 flex flex-wrap gap-4"
+        >
           {socials.map((social) => (
-            <a
+            <motion.a
               key={social.name}
+              variants={fadeUp}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.name}
-              className="flex items-center gap-3 rounded-lg border border-gray-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/60 backdrop-blur-sm px-5 py-3 text-gray-600 dark:text-slate-400 transition-colors hover:border-gray-400 dark:hover:border-slate-500 hover:text-gray-900 dark:hover:text-white"
+              className="flex items-center gap-3 rounded-xl border border-accent/15 bg-white dark:bg-dark-card px-5 py-3 text-[var(--text-muted)] transition-all duration-300 hover:border-accent/40 hover:text-accent hover:shadow-[0_0_20px_rgba(0,212,200,0.1)] hover:-translate-y-0.5"
             >
               {social.icon}
               <span className="text-sm font-medium">{social.name}</span>
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

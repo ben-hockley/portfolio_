@@ -21,8 +21,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            var saved = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (!saved && prefersDark)) {
+              document.documentElement.classList.add('dark');
+            }
+          })();
+        `}} />
+      </head>
       <body
-        className="antialiased bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100"
+        className="antialiased bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-100"
       >
         {children}
       </body>

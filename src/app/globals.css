@@ -93,7 +93,7 @@
 }
 
 .animate-marquee {
-  animation: scroll-marquee 25s linear infinite;
+  animation: scroll-marquee 75s linear infinite;
 }
 
 /* ── Respect prefers-reduced-motion ── */

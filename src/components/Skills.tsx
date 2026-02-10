@@ -1,35 +1,72 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPython, faJs, faReact, faBootstrap, faAndroid, faDocker, faGit, faJava, faLinux, faMicrosoft, faNodeJs} from "@fortawesome/free-brands-svg-icons";
-import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { 
+  SiReact, 
+  SiJavascript, 
+  SiPython, 
+  SiBootstrap,  
+  SiDocker, 
+  SiGit, 
+  SiSharp, 
+  SiLinux, 
+  SiNodedotjs,
+  SiJenkins,
+  SiFlask,
+  SiNextdotjs,
+  SiFastapi,
+  SiPostgresql,
+  SiKotlin,
+  SiTypescript,
+  SiKubernetes,
+  SiSpring,
+  SiMariadb,
+  SiDotnet,
+  SiTailwindcss
+} from "react-icons/si";
+import { 
+  DiAndroid,
+  DiJava
+ } from "react-icons/di";
+ import { TbBrandCSharp } from "react-icons/tb";
+import type { IconType } from "react-icons";
 
 interface Skill {
   name: string;
-  icon: IconDefinition;
+  icon: IconType;
 }
 
 const skills: Skill[] = [
-  { name: "React", icon: faReact },
-  { name: "JavaScript", icon: faJs },
-  { name: "Python", icon: faPython },
-  { name: "Bootstrap", icon: faBootstrap },
-  { name: "Android", icon: faAndroid },
-  { name: "Docker", icon: faDocker },
-  { name: "Git", icon: faGit },
-  { name: "Java", icon: faJava },
-  { name: "C#", icon: faMicrosoft },
-  { name: "Linux", icon: faLinux },
-  { name: "Node.js", icon: faNodeJs },
+  { name: "React", icon: SiReact },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "Node.js", icon: SiNodedotjs },
+  { name: "Python", icon: SiPython },
+  { name: "Flask", icon: SiFlask },
+  { name: "FastAPI", icon: SiFastapi },
+  { name: "Java", icon: DiJava },
+  { name: "Spring Boot", icon: SiSpring },
+  { name: "C#", icon: TbBrandCSharp },
+  { name: ".NET", icon: SiDotnet },
+  { name: "Kotlin", icon: SiKotlin },
+  { name: "Android", icon: DiAndroid },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "MariaDB", icon: SiMariadb },
+  { name: "Docker", icon: SiDocker },
+  { name: "Kubernetes", icon: SiKubernetes },
+  { name: "Jenkins", icon: SiJenkins },
+  { name: "Git", icon: SiGit },
+  { name: "Linux", icon: SiLinux },
+  { name: "Bootstrap", icon: SiBootstrap },
+  { name: "Tailwind", icon: SiTailwindcss}
 ];
 
 function SkillCard({ skill }: { skill: Skill }) {
+  const IconComponent = skill.icon;
   return (
     <div className="flex flex-col items-center gap-2 px-8">
-      <FontAwesomeIcon
-        icon={skill.icon}
+      <IconComponent
         className="text-accent"
         style={{ width: "3rem", height: "3rem" }}
         aria-hidden="true"

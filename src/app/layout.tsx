@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <body
-        className="antialiased bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100"
+        className="antialiased bg-slate-900 text-slate-100"
       >
         {children}
       </body>

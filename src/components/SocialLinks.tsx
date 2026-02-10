@@ -1,3 +1,7 @@
+"use client";
+
+import { useInView } from "@/hooks/useInView";
+
 /* TODO: Replace "#" with your actual profile URLs */
 const socials = [
   {
@@ -23,15 +27,6 @@ const socials = [
     ),
   },
   {
-    name: "Twitter",
-    href: "#",
-    icon: (
-      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
-  {
     name: "Email",
     href: "mailto:hockleyben4@gmail.com",
     icon: (
@@ -48,37 +43,46 @@ const socials = [
 ];
 
 export default function SocialLinks() {
+  const { ref, isInView } = useInView();
+
   return (
     <section
       id="social"
-      className="mx-auto max-w-5xl px-6 py-24"
+      ref={ref}
+      className="bg-slate-800"
       aria-labelledby="social-heading"
     >
-      <h2
-        id="social-heading"
-        className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+      <div
+        className={`mx-auto max-w-6xl px-6 py-24 ${
+          isInView ? "animate-fade-in-up" : "opacity-0"
+        }`}
       >
-        Get in Touch
-      </h2>
-      <p className="mt-4 text-gray-600 dark:text-gray-400">
-        Feel free to reach out through any of these platforms. Replace the
-        placeholder links with your actual profiles.
-      </p>
+        <h2
+          id="social-heading"
+          className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+        >
+          Get in Touch
+        </h2>
+        <p className="mt-4 text-slate-400">
+          Feel free to reach out through any of these platforms. Replace the
+          placeholder links with your actual profiles.
+        </p>
 
-      <div className="mt-10 flex flex-wrap gap-4">
-        {socials.map((social) => (
-          <a
-            key={social.name}
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={social.name}
-            className="flex items-center gap-3 rounded-lg border border-gray-200 px-5 py-3 text-gray-600 transition-colors hover:border-gray-400 hover:text-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:border-gray-500 dark:hover:text-white"
-          >
-            {social.icon}
-            <span className="text-sm font-medium">{social.name}</span>
-          </a>
-        ))}
+        <div className="mt-10 flex flex-wrap gap-4">
+          {socials.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.name}
+              className="flex items-center gap-3 rounded-lg border border-slate-700/50 bg-slate-800/60 backdrop-blur-sm px-5 py-3 text-slate-400 transition-colors hover:border-slate-500 hover:text-white"
+            >
+              {social.icon}
+              <span className="text-sm font-medium">{social.name}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

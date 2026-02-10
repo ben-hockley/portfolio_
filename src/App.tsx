@@ -6,7 +6,7 @@ import Skills from "@/components/Skills";
 import SocialLinks from "@/components/SocialLinks";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+function App() {
   return (
     <div className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--text)]">
       <Header />
@@ -24,3 +24,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default App;

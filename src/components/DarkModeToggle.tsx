@@ -1,5 +1,3 @@
-"use client";
-
 import { useSyncExternalStore, useCallback } from "react";
 
 function getSnapshot(): boolean {

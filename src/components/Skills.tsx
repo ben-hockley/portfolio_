@@ -12,6 +12,7 @@ import {
   SiLinux, 
   SiNodedotjs,
   SiJenkins,
+  SiGithubactions,
   SiFlask,
   SiNextdotjs,
   SiFastapi,
@@ -22,7 +23,10 @@ import {
   SiSpring,
   SiMariadb,
   SiDotnet,
-  SiTailwindcss
+  SiTailwindcss,
+  SiClaude,
+  SiGithubcopilot,
+  SiGooglegemini
 } from "react-icons/si";
 import { 
   DiAndroid,
@@ -56,10 +60,14 @@ const skills: Skill[] = [
   { name: "Docker", icon: SiDocker },
   { name: "Kubernetes", icon: SiKubernetes },
   { name: "Jenkins", icon: SiJenkins },
+  { name: "GitHub Actions", icon: SiGithubactions },
   { name: "Git", icon: SiGit },
   { name: "Linux", icon: SiLinux },
   { name: "Bootstrap", icon: SiBootstrap },
-  { name: "Tailwind", icon: SiTailwindcss}
+  { name: "Tailwind", icon: SiTailwindcss},
+  { name: "Claude Code", icon: SiClaude },
+  { name: "GitHub Copilot", icon: SiGithubcopilot },
+  { name: "Google AI Studio", icon: SiGooglegemini }
 ];
 
 function SkillCard({ skill }: { skill: Skill }) {

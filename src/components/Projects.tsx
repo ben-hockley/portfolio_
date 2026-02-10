@@ -21,6 +21,8 @@ const staggerContainer = {
 };
 
 function ProjectCard({ project }: { project: Project }) {
+  const imageSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.image}`;
+
   return (
     <motion.a
       variants={fadeUp}
@@ -29,7 +31,7 @@ function ProjectCard({ project }: { project: Project }) {
     >
       <div className="mb-4 flex h-40 items-center justify-center overflow-hidden rounded-lg bg-[#f0f5f7] dark:bg-dark-surface">
         <img
-          src={project.image}
+          src={imageSrc}
           alt={`Screenshot of ${project.title}`}
           className="h-full w-full object-cover"
         />
